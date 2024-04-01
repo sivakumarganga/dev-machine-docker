@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    ports:
+      - 8888:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=techdev@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=techdev123
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgresdb_docker
+    networks:
+      - postgres
+  postgresdb_docker:
+    image: postgres
+    container_name: postgresdb
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=techdev
+      - POSTGRES_PASSWORD=techdev123
+      - PGDATA=/data/postgres
+      - POSTGRES_DB=db
+    volumes:
+      - postgres_data:/data/postgres
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  pgadmin_data:
