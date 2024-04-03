@@ -9,12 +9,9 @@ To get started, simply clone this repository to your local machine:
 ```bash
 git clone https://github.com/sivakumarganga/dev-machine-docker.git
 ```
-
- ### <a name="head1234"></a>A Heading in this SO entry! /
-
 ## Available Docker Compose Files
 * **PostgreSQL and pgAdmin**
-      `File`: [Docker Compose](/postgres-pgadmin/docker-compose.yml)
+      `File`: [Docker Compose](/postgres-pgadmin/docker-compose.yml) 
       `Description`: Sets up PostgreSQL database server along with pgAdmin for database management.
 *  **MySQL**
       `File`: mysql/docker-compose.yml
